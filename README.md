@@ -12,3 +12,7 @@ ansible-playbook down.yml
 ```
 
 This does docker compose down on the clickhouse-setup/docker-compose-minimal.yaml (the same docker-compose file from up.yml)
+
+## Hypothesis 1: Docker is not sending logs to Signoz
+- Added logspout container to forward logs to otel-collector.
+- service "otel-collector-migrator" didn't complete successfully.
