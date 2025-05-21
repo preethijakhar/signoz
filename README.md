@@ -12,3 +12,7 @@ ansible-playbook down.yml
 ```
 
 This does docker compose down on the clickhouse-setup/docker-compose-minimal.yaml (the same docker-compose file from up.yml)
+
+## Hypothesis 2: Outdated image versions
+- Updated image tags of all Signoz services to latest stable versions.
+- Logs started showing up in the dashboard.
