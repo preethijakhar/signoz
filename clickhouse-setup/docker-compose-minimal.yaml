@@ -268,12 +268,15 @@ services:
         condition: service_healthy
 
   logspout:
-    image: "gliderlabs/logspout:v3.2.14"
-    container_name: signoz-logspout
+    image: gliderlabs/logspout
+    container_name: logspout
     volumes:
       - /etc/hostname:/etc/host_hostname:ro
       - /var/run/docker.sock:/var/run/docker.sock
     command: syslog+tcp://otel-collector:2255
+    environment:
+      - ROUTE_URIS=log://otel-collector:2255
     depends_on:
       - otel-collector
     restart: on-failure
+
