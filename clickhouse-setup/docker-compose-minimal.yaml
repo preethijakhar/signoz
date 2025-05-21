@@ -227,7 +227,7 @@ services:
 
 
   otel-collector:
-    image: signoz/signoz-otel-collector:${OTELCOL_TAG:-0.102.12}
+    image: signoz/signoz-otel-collector:0.93.6
     container_name: signoz-otel-collector
     command:
       [
